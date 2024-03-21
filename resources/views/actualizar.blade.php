@@ -24,10 +24,19 @@
     </script>
 </head>
 
-<body style="background-color: cornflowerblue">
+@extends('adminlte::page')
+
+@section('title', 'Dashboard')
+
+@section('content_header')
+    <h1>Actualización de Datos</h1>
+@stop
+
+@section('content')
+<body>
     <div>
         <div class="col-md-6 offset-md-3">
-            <h1>Actualización de Datos</h1>
+            
             <form id="FormActualizar" enctype="multipart/form-data">
 
                 <input type="hidden" name="id" value="<?= isset ($datos['id']) ? $datos['id'] : '' ?>">
@@ -62,16 +71,14 @@
                 <br>
                 <input type="file" class="form-control" id="image" name="image"> <br>
 
-                <button type="submit" class="btn btn-primary" id="btn-Act">Actualizar</button>
-
+                <x-adminlte-button class="btn-flat" type="submit" label="Actualizar" theme="success" icon="fas fa-lg fa-save" id="btn-Act"/>
             </form>
         </div>
 </body>
-
-
-
 </html>
+@stop
 
+@section('js')
 <script>
     jQuery('#btn-Act').on('click', function (event) {
         event.preventDefault();
@@ -112,6 +119,10 @@
                 }
             });
     });
-
-
 </script>
+@stop
+
+
+
+
+

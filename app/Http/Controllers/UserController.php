@@ -25,6 +25,9 @@ class UserController extends Controller
     }
 
     /***************CREAR USUARIO****************/
+    public function viewCrear(){
+        return view("crear");
+    }
     public function crearUsuario()
     {
         $validator = Validator::make($this->request->all(), [

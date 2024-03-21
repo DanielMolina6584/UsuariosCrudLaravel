@@ -21,6 +21,10 @@ class LoginController extends Controller
      {
           return view("login");
      }
+     public function viewRegister(Request $request)
+     {
+          return view("register");
+     }
      
      public function registrar()
      {
@@ -82,5 +86,6 @@ class LoginController extends Controller
      public function logout()
      {
          session()->forget('token');
+     
      }
 }
